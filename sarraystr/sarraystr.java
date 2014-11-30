@@ -93,6 +93,7 @@ public class sarraystr {
 	}
     }
 
+    /*
     public static void main(String[] args) {
 	sarraystr s = new sarraystr();
 	System.out.println("size: " + s.size());
@@ -114,4 +115,5 @@ public class sarraystr {
 	s.remove(0);
 	System.out.println(s);
     }
+    */
 }
