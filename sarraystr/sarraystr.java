@@ -68,11 +68,7 @@ public class sarraystr {
     }
     
     public String get(int index) {
-	if (index<last) {
-	    return data[index];
-        } else {
-	    return "Index out of bounds";
-	}
+	return data[index];
     }
    
     public String set(int index, String s) {

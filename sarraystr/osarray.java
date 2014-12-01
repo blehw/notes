@@ -1,48 +1,44 @@
 public class osarray extends sarraystr {
-    private String[] odata;
-    private int last;
 
-    public osarray() {
-	odata = new String[10];
-    }
-    
     public void add(String s) {
-	int i = 0;
-	if (super.size() == 0) {
-	    if (last<data.length) {
-		data[last +1] = s;
-		last +=1;
-	    }
-	    if (last==data.length) {
-		makeArray();
-		data[last +1] = s;
-		last +=1;
-	    }
-	    System.out.println("empty");
+	if (super.size() == 0) {		
+	    super.add(s);
 	} else {
-	    System.out.println("not empty");
-	    while (i<super.size()) {
-		System.out.println("test");
-		System.out.println(i);
-		System.out.println(odata[0]);
-		if (s.compareTo(odata[i]) > 0) {
-		    System.out.println("in here");
+	    int i = 0;
+	    boolean b = true;
+	    while (i<super.size() && b) {
+		if ((s.substring(0,1)).compareTo((super.get(i)).substring(0,1)) <= 0) {
 		    super.add(i,s);
-		}
-		System.out.println("out");
+		    b = false;
+		} 
 		i = i + 1;
 	    }
+	    if (b) {
+		super.add(0,s);
+	    }
 	}
-	System.out.println(odata.length);
     }
 
+    public String set(int i, String s) {
+	String old = super.get(i);
+	super.remove(i);
+	this.add(s);
+	this.add(old);
+	return old;
+    }
+ 
     public static void main(String[] args) {
 	osarray s = new osarray();
 	s.add("hello");
 	System.out.println(s);
-	s.add("abc");
+	s.add("b");
 	System.out.println(s);
-	System.out.println(s.size());
-	System.out.println("hello".compareTo("abc"));
+	s.add("a");
+	System.out.println(s);
+	s.add("cat");
+	System.out.println(s);
+	s.set(1,"hello");
+	System.out.println(s);
+	
     }
 }
