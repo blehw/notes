@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Gui1 extends JFrame {
+public class Gui2 extends JFrame implements ActionListener {
 
     private Container pane;
     private JButton b1,b2;
@@ -9,7 +9,7 @@ public class Gui1 extends JFrame {
     private JTextArea text;
     private JPanel canvas;
 
-    public Gui1(){
+    public Gui2(){
 
 	setTitle("My First Gui");
 	setSize(600,400);
@@ -53,7 +53,7 @@ public class Gui1 extends JFrame {
 	*/
     }
     public static void main(String[] args) {
-	Gui1 f = new Gui1();
+	Gui2 f = new Gui2();
 	f.setVisible(true);
     }
 }
